@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import AddNewItem from './AddNewItem'
 import DeleteItem from './DeleteItem'
+import ItemList from './ItemList'
 
 class App extends React.Component {
   state = {
@@ -11,7 +12,7 @@ class App extends React.Component {
   };
 
   handleAddItem = item => {
-    this.setState(prevState => ({ items: [prevState.items, item]}));
+    this.setState(prevState => ({ items: [...prevState.items, item]}));
 };
 
 
@@ -42,10 +43,7 @@ class App extends React.Component {
         />
 
         {/* Add List component here */}
-        <p className="items">Items</p>
-        <ol className="item-list">
-          {this.state.items.map((item, index) => <li key={index}>{item}</li>)}
-        </ol>
+        <ItemList items={this.state.items}/>
       </div>
     );
   }
