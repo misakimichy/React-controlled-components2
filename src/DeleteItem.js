@@ -7,7 +7,10 @@ const DeleteItem = props => {
     };
 
     return (
-        <button onClick={handleDeleteItem} disabled={props.disableDeleteButton}>
+        <button
+            onClick={handleDeleteItem}
+            disabled={props.disableDeleteButton()}
+        >
             Delete Last Item
         </button>
     )
