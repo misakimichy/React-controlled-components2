@@ -34,12 +34,12 @@ class App extends React.Component {
         <h2>Shopping List</h2>
 
         {/* Add AddNewItem component here */}
-        <AddNewItem onAddItem={this.handleAddItem}/>
+        <AddNewItem onAddItem={this.handleAddItem} />
 
         {/* Add Delete component here */}
         <DeleteItem 
           onDeleteItem={this.handleDeleteItem} 
-          disableDeleteButton={this.noItemsFound()}
+          disableDeleteButton={this.noItemsFound}
         />
 
         {/* Add List component here */}
